@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "dataset.tools",
+  "version": "1.0",
+  "description": "Chrome extension to collect datasets for data.world",
+  "icons": {
+    "16": "dataset.tools_16.png",
+    "48": "dataset.tools_64.png",
+    "128": "dataset.tools_128.png"
+  },
+  "browser_action":{
+    "default_icon": "dataset.tools_16.png",
+    "default_title": "dataset.tools",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["jquery.js", "background.js"]
+  },
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [],
+  "permissions": [
+    "<all_urls>"
+  ]
+}
