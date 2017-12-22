@@ -1,6 +1,5 @@
 console.log('content.js loaded!');
 // Manipulate DOM here
-// i.e. webscrapping
 let links = document.getElementsByTagName('a');
 links = [...links];
 links = links.filter(link => link.href.slice(link.href.length - 4) === '.csv').map((link) => link.href);
