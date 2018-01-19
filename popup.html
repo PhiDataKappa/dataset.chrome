@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="popup.css"/>
   </head>
   <script type="text/javascript"></script>
+  <script>
+    function setImageUrl(url) {
+      document.getElementById('target').src = url;
+    }
+  </script>
 </head>
 <body>
 
@@ -18,6 +23,10 @@
 
 
   <div id="linkTable"></div>
+
+  <p>Image here:</p>
+  <img id="target" src="white.png" width="640" height="480">
+
 
   <footer><p>available datasets on this page</p></footer>
   <script src="jquery.js"></script>

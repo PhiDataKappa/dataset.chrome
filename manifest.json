@@ -1,5 +1,6 @@
 {
   "manifest_version": 2,
+  
   "name": "dataset.chrome",
   "version": "1.0",
   "description": "A dataset collection utility for the data.world community",
@@ -8,29 +9,20 @@
     "48": "images/dataset.tools_64.png",
     "128": "images/dataset.tools_128.png"
   },
+  "background": {
+    "scripts": ["jquery.js", "background.js"],
+    "persistent"
+  },
   "browser_action":{
     "default_icon": "images/dataset.tools_16.png",
-    "default_title": "dataset.tools",
     "default_popup": "popup.html"
   },
-  "background": {
-    "scripts": ["jquery.js", "background.js"]
-  },
-  "permissions": [
-    
-    "activeTab",
-    "contextMenus",
-    "notifications"
-  ],
+  "permissions": ["activeTab", "notifications", "<all_urls>"],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "css": ["popup.css"],
       "js": ["content.js"]
     }
   ],
-  "web_accessible_resources": [],
-  "permissions": [
-  "<all_urls>"
-]
+  "web_accessible_resources": []
 }
