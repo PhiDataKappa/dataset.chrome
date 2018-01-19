@@ -1,5 +1,6 @@
 console.log('content.js loaded!');
 // Manipulate DOM here
+
 let links = document.getElementsByTagName('a');
 
 links = [...links];
@@ -20,6 +21,11 @@ chrome.runtime.onMessage.addListener((request) => {
   }
 });
 
+
+//
+// chrome.tabs.getCurrent(function(Tab tab) {
+//   console.log('current tab loaded from click')
+// };
 
 //
 // let dataLinks = document.getElementsByTagName('a');
