@@ -1,7 +1,8 @@
 console.log('popup.js loaded!');
 
-let links = [];
-
+chrome.runtime.sendMessage({
+  action:'getLinks',
+});
 // modify url so file name visible in popup window
 function splitPath(path) {
   var dirPart, filePart;
@@ -33,6 +34,25 @@ function onUpload(apiLink){
 
 // To Listen for message from background.js:
 chrome.runtime.onMessage.addListener((request) => {
+  if (request.action === 'newLinks') {
+    console.log('newLinks!');
+    console.log(request.payload);
+    links = request.payload;
+    // request.payload.forEach((link) => alert(link))
+    const table = makeTable(links);
+    console.log('links: ', links);
+    console.log('table: ', table);
+    $('#linkTable').append(table);
+    $('.importButton').on('click', function(e) {
+      console.log('event fired!');
+      console.log('this: ', this);
+      console.log('target: ', e.target);
+      console.log('link? : ', e.target.getAttribute('link'));
+      const self = this;
+      // console.log('payloadsenttobackground: ', self.link);
+      onUpload(e.target.getAttribute('link'));
+    });
+  }
   if (request.action === 'messageFromContentJS' ){
     console.log('message recieved from contentjs!');
     console.log('payload: ', request.payload);

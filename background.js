@@ -1,6 +1,6 @@
 console.log('background.js loaded!');
 // Server logic goes here
-
+let links = [];
 // React when a browser action's icon is clicked.
 chrome.browserAction.onClicked.addListener(function(tab) {
   var viewTabUrl = chrome.extension.getURL('image.html');
@@ -33,8 +33,16 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 
 // To listen to messages from popup.js or content.js:
 chrome.runtime.onMessage.addListener((request) => {
-  if (request.action === 'messageFromContentJS' ){
-    //do stuff with request.payload
+  if (request.action === 'getLinks' ){
+    console.log('link request received!');
+    chrome.runtime.sendMessage({
+      action:'newLinks',
+      payload: links
+    });
+  } else if (request.action === 'messageFromContentJS' ){
+    console.log('message recieved from contentjs!');
+    console.log('payload: ', request.payload);
+    links = request.payload;
 
   } else if (request.action === 'sendToDataWorld' ){
       console.log('sendToDataWorld message received!');
