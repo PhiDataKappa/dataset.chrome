@@ -1,13 +1,15 @@
 body {
   text-align: center;
   background-image: url('./images/dw.logo_popup_25_transparency.png');
-  background-position: bottom;
-  background-size: contain;
+  /* background-position: bottom; */
+  background-size: float;
   background-repeat: no-repeat;
   align-content: center;
-  min-width: 400px;
-  min-height: 400px;
-  position: relative;
+  width: auto;
+  height: auto;
+  min-width: 285px;
+  min-height: 180px;
+  position: flex-direction: row;;
   vertical-align: text-top;
   font: 14px Arial;
 
@@ -15,8 +17,16 @@ body {
 
 p {
   margin-top: 20px;
+  /* margin-right: 2px; */
   font-style: italic;
-  font-size: 50%;
+  font-size: 10px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 40%; */
 }
 
 /* h3 {

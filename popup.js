@@ -14,9 +14,9 @@ function splitPath(path) {
 function makeTable(links) {
   let table ='<table id="linkTable">'
   for (let i = 0; i < links.length; i++) {
-      table += `<tr><td><ul>${splitPath(links[i])}</ul></td>
-      <td><input type="submit" class="button" value="inspect"></td>
-      <td><input type="submit" class="button importButton" value="import" link=${links[i]}></td></tr>`
+      table += `<tr><td><input type="submit" class="button importButton" value="add to repo" link=${links[i]}></td><td><ul>${splitPath(links[i])}</ul></td>
+      <td><img src="./images/csv_icon_popup.png" style="float:left;width:24px;height:24px;" ></td>
+      </tr>`
   }
   table += '</table>'
 
