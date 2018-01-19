@@ -1,5 +1,6 @@
 console.log('content.js loaded!');
 // Manipulate DOM here
+
 let links = document.getElementsByTagName('a');
 
 links = [...links];

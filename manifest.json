@@ -3,24 +3,35 @@
 
   "name": "dataset.chrome",
   "version": "1.0",
-  "description": "A dataset collection utility for the data.world community",
   "icons": {
     "16": "images/dataset.tools_16.png",
     "48": "images/dataset.tools_64.png",
     "128": "images/dataset.tools_128.png"
   },
+  "description": "Chrome extension for simplified dataset collection by the data.world community",
   "background": {
-    "scripts": ["jquery.js", "background.js"],
-    "persistent": true
+    "page": "background.html"
   },
+  "options_page": "options.html",
   "browser_action":{
     "default_icon": "images/dataset.tools_16.png",
+    "default_title": "a dataset.tools utility",
     "default_popup": "popup.html"
   },
-  "permissions": ["activeTab", "notifications", "<all_urls>"],
+  "permissions": [
+    "tabs",
+    "https://docs.google.com/feeds/*",
+    "https://www.google.com/accounts/OAuthGetRequestToken",
+    "https://www.google.com/accounts/OAuthAuthorizeToken",
+    "https://www.google.com/accounts/OAuthGetAccessToken",
+    "identity",
+    "notifications",
+    "http://*/*",
+    "https://*/*"
+    ],
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["http://*/*", "https://*/*"],
       "js": ["content.js"]
     }
   ],
