@@ -1,5 +1,6 @@
 console.log('content.js loaded!');
 // Manipulate DOM here
+// chrome.browserAction.setPopup({popup: "popup.html"});
 
 let links = document.getElementsByTagName('a');
 console.log('links', links);
