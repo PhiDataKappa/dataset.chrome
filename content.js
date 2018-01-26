@@ -5,7 +5,11 @@ console.log('content.js loaded!');
 let links = document.getElementsByTagName('a');
 console.log('links', links);
 links = [...links];
-links = links.filter(link => link.href.slice(link.href.length - 4) === '.csv').map((link) => link.href);
+let csvLinks = links.filter(link => link.href.slice(link.href.length - 4) === '.csv').map((link) => link.href);
+let xlsLinks = links.filter(link => link.href.slice(link.href.length - 4) === '.xls').map((link) => link.href);
+let xlsxLinks = links.filter(link => link.href.slice(link.href.length - 5) === '.xlsx').map((link) => link.href);
+links = [...csvLinks, ...xlsLinks, ...xlsxLinks];
+
 
 links.forEach(link => {console.log(link.href)});
 
