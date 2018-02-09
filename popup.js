@@ -48,11 +48,11 @@ function displayMatches() {
   suggestions.innerHTML = html;
 }
 
-const searchInput = document.querySelector('.search');
-const suggestions = document.querySelector('.suggestions');
+const scrapedDataset = document.querySelector('.search');
+// const suggestions = document.querySelector('.suggestions');
 
-searchInput.addEventListener('change', displayMatches);
-searchInput.addEventListener('keyup', displayMatches);
+scrapedDataset.addEventListener('change', displayMatches);
+// scrapedDataset.addEventListener('keyup', displayMatches);
 
 links.forEach(link => {console.log(link.href)});
 

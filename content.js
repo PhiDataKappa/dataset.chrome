@@ -3,8 +3,9 @@ console.log('content.js loaded!');
 // chrome.browserAction.setPopup({popup: "popup.html"});
 
 
-let links = document.getElementsByTagName('a');
-console.log('links', links);
+let links = document.querySelectorAll('a');
+  console.table('links', links);
+
 links = [...links];
 
 // const links = [];
@@ -22,18 +23,18 @@ function findMatches(wordToMatch, links) {
 
 
 
-
-// let links = document.getElementsByTagName('a');
+//
+// let links = document.querySelectorAll('a');
 // console.log('links', links);
 // links = [...links];
 // let csvLinks = links.filter(link => link.href.slice(link.href.length - 4) === '.csv').map((link) => link.href);
 // let xlsLinks = links.filter(link => link.href.slice(link.href.length - 4) === '.xls').map((link) => link.href);
 // let xlsxLinks = links.filter(link => link.href.slice(link.href.length - 5) === '.xlsx').map((link) => link.href);
 // links = [...csvLinks, ...xlsLinks, ...xlsxLinks];
-
-
+//
+// 
 // links.forEach(link => {console.log(link.href)});
-
+//
 
 
 
